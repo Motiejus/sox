@@ -148,12 +148,23 @@
 #if !defined(HAVE_FSEEKO)
 #undef off_t
 #define fseeko fseeko64
-#define fstat _fstati64
 #define ftello ftello64
 #define off_t off64_t
-#define stat _stati64
-#define HAVE_FSEEKO 1
+
+#if defined(HAVE__FSTATI64)
+#define fstat _fstati64
+#elif defined(HAVE__FSTAT)
+#define fstat _fstat
 #endif
+
+#if defined(HAVE__STATI64)
+#define stat _stati64
+#elif defined(HAVE__STAT)
+#define stat _stat
+#endif
+
+#define HAVE_FSEEKO 1
+#endif /* !defined(HAVE_FSEEK0) */
 
 #endif
 

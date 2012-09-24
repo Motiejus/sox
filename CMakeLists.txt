@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.4)
 include(CheckIncludeFiles)
 include(CheckFunctionExists)
 include(CheckLibraryExists)
+include(CheckStructHasMember)
 
 macro(optional variable header library function source)
   check_include_files(${header} ${variable}1)
@@ -97,6 +98,11 @@ check_function_exists("popen"            HAVE_POPEN)
 check_function_exists("strcasecmp"       HAVE_STRCASECMP)
 check_function_exists("strrstr"          HAVE_STRRSTR)
 check_function_exists("vsnprintf"        HAVE_VSNPRINTF)
+
+check_struct_has_member("struct _fstat" st_mtime sys/stat.h HAVE__FSTAT)
+check_struct_has_member("struct _fstati64" st_mtime sys/stat.h HAVE__FSTATI64)
+check_struct_has_member("struct _stat" st_mtime sys/stat.h HAVE__STAT)
+check_struct_has_member("struct _stati64" st_mtime sys/stat.h HAVE__STATI64)
 
 test_big_endian(WORDS_BIGENDIAN)
 

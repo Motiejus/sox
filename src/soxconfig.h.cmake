@@ -13,6 +13,8 @@
 #cmakedefine HAVE_FLAC                1
 #cmakedefine HAVE_FMEMOPEN            1
 #cmakedefine HAVE_FSEEKO              1
+#cmakedefine HAVE__FSTAT              1
+#cmakedefine HAVE__FSTATI64           1
 #cmakedefine HAVE_GETTIMEOFDAY        1
 #cmakedefine HAVE_GLOB_H              1
 #define HAVE_GSM                      1
@@ -38,6 +40,8 @@
 #cmakedefine HAVE_SNDFILE_1_0_18      1
 #cmakedefine HAVE_SNDIO               1
 #cmakedefine HAVE_SPEEXDSP            1
+#cmakedefine HAVE__STATI              1
+#cmakedefine HAVE__STATI64            1
 #cmakedefine HAVE_STDINT_H            1
 #cmakedefine HAVE_STRCASECMP          1
 #cmakedefine HAVE_STRING_H            1
